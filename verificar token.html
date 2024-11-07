@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificar Token - Kitty</title>
+    <link rel="stylesheet" href="style.css"> <!-- Referência ao arquivo de estilos principal -->
+    <link rel="stylesheet" href="main.css"> <!-- Referência ao arquivo de estilos adicional -->
+    <style>
+        body {
+            background-color: #000; /* Fundo preto */
+            color: #fff; /* Texto branco */
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .message-container {
+            text-align: center;
+        }
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #000;
+            color: #fff;
+            border: 2px solid #fff;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        button:hover {
+            background-color: #fff;
+            color: #000;
+        }
+         *, *::after, *::before {
+            box-sizing: inherit;
+            margin: 0;
+            padding: 0;
+            cursor: crosshair;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+          }
+
+        *,
+        *::after,
+        *::before {
+            box-sizing: inherit;
+            margin: 0;
+            padding: 0;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="message-container">
+        <h1>Você está pronto para usar as funções</h1>
+  <button onclick="voltarAoInicio()">Voltar ao início</button>
+    </div>
+
+    <script>
+        // Função para redirecionar ao clicar no botão "Voltar ao início"
+        function voltarAoInicio() {
+            window.location.href = 'index.html'; // Redireciona para a página inicial (index.html)
+        }
+    </script>
+  <script src="js/curr.js"></script>
+</body>
+</html>

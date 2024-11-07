@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clear DM - Configuração</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121111; /* Fundo escuro */
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #000;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        label {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            border: 1px solid #333;
+            border-radius: 4px;
+            background-color: #222;
+            color: #fff;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .response {
+            margin-top: 20px;
+            color: #FFD700;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Configuração para Apagar Mensagens</h1>
+        <form id="clearDMForm">
+            <label for="userId">ID do Usuário:</label>
+            <input type="text" id="userId" placeholder="Digite o ID do Usuário" required>
+
+            <label for="token">Token:</label>
+            <input type="text" id="token" placeholder="Digite o Token" required>
+
+            <label for="delay">Delay entre Apaga Mensagens (em ms):</label>
+            <input type="text" id="delay" placeholder="Delay em milissegundos" required>
+
+            <button type="submit">Apagar Mensagens</button>
+        </form>
+
+        <div class="response" id="response"></div>
+    </div>
+
+    <script>
+        document.getElementById('clearDMForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const userId = document.getElementById('userId').value;
+            const token = document.getElementById('token').value;
+            const delay = document.getElementById('delay').value;
+
+            const responseElement = document.getElementById('response');
+            responseElement.textContent = "Processando...";
+
+            try {
+                const res = await fetch('/clear-dm', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ userId, token, delay })
+                });
+
+                const data = await res.json();
+
+                if (res.ok) {
+                    responseElement.textContent = `Mensagens apagadas com sucesso para o ID: ${userId}. ${data.message}`;
+                } else {
+                    responseElement.textContent = `Erro: ${data.message}`;
+                }
+            } catch (error) {
+                console.error('Erro na requisição:', error);
+                responseElement.textContent = 'Erro ao processar a solicitação.';
+            }
+        });
+    </script>
+</body>
+</html>

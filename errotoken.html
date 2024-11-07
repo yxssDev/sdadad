@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erro de Token - Kitty Tool's</title>
+    <link rel="stylesheet" href="style.css"> <!-- Referência ao arquivo de estilos principal -->
+    <link rel="stylesheet" href="main.css"> <!-- Referência ao arquivo de estilos adicional -->
+    <style>
+        body {
+            background-color: #000; /* Fundo preto */
+            color: #fff; /* Texto branco */
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .error-container {
+            background-color: #333; /* Fundo da caixa de erro */
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transform: translateZ(20px); /* Efeito 3D */
+            perspective: 1000px;
+        }
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .options {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #000;
+            color: #fff;
+            border: 2px solid #fff;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 0 10px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        button:hover {
+            background-color: #fff;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <h1>Token inválida</h1>
+        <div class="options">
+            <button onclick="voltarAoInicio()">Voltar à página inicial</button>
+            <button onclick="voltarParaConfigToken()">Configurar Token novamente</button>
+        </div>
+    </div>
+
+    <script>
+        // Função para redirecionar ao clicar no botão "Voltar à página inicial"
+        function voltarAoInicio() {
+            window.location.href = 'index.html'; // Redireciona para a página inicial (index.html)
+        }
+
+        // Função para redirecionar ao clicar no botão "Configurar Token novamente"
+        function voltarParaConfigToken() {
+            window.location.href = 'configurar token.html'; // Redireciona para a página de configuração do token (configtoken.html)
+        }
+    </script>
+  <script src="js/cursor.js"></script>
+</body>
+</html>
